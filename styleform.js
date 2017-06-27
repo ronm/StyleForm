@@ -137,7 +137,7 @@
 			this.current = i;
 			this.options[i].selected = true;
 			this.element.dispatchEvent(change);
-			this.selectedWrapper.innerHTML = this.options[i].value || this.options[i].innerHTML;
+			this.selectedWrapper.innerHTML = this.options[i].innerHTML;
 		} 
 	}
 	/* FORM: SELECTS */

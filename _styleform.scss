@@ -39,40 +39,32 @@
 	}
 
 	.item {
-		background: #fff;
-		color: #062230;
+		//background: #fff;
+		//color: #062230;
 		overflow: hidden;
 		transition: opacity .3s ease, max-height 0s .3s;
 	
 		&.active {
-			background-color: #f4f4f4;
+			//background-color: #f4f4f4;
 			border: none;
 			padding-right: 4rem;
-			
-			&:first-child {
-				color: #666;
-			}
-			
-			&:not(:first-child) {
-				color: #000;
-			}
 		}
 	}
 
 	.item-wrapper {
-		font-size: .875rem;
-		font-weight: 400;
+		//font-size: .875rem;
+		//font-weight: 400;
 		padding: .5rem 1.5rem;
 		
 		@media(min-width:64.003rem) {
-			font-size: 1.125rem;
+			//font-size: 1.125rem;
 			padding-bottom: .75rem;
 			padding-top: .75rem;		
 		}
 		
 		.item.active & {
-			font-size: 1.125rem;
-			line-height: normal;
+			//font-size: 1.125rem;
+			//line-height: normal;
 			padding: .666rem 1.75rem;
 			white-space: nowrap;
 		}
