@@ -25,12 +25,12 @@
 	}
 
 	.options-wrapper {
-		position: absolute;
-		top: 0;
 		left: 0;
 		max-height: 0;
 		overflow: hidden;
+		position: absolute;
 		right: 0;
+		top: 100%;
 	}
 
 	&.open .options-wrapper {
@@ -39,6 +39,8 @@
 	}
 
 	.item {
+		background: #fff;
+		color: #062230;
 		overflow: hidden;
 		transition: opacity .3s ease, max-height 0s .3s;
 	
@@ -53,21 +55,6 @@
 			
 			&:not(:first-child) {
 				color: #000;
-			}
-		}
-		
-		&:not(.active) {
-			background: #fff;
-			color: #062230;
-			max-height: 0;
-			opacity: 0;
-			
-			&:hover {
-				background: #f4f4f4;
-			}
-			
-			.item-wrapper {
-				color: #091d32;
 			}
 		}
 	}

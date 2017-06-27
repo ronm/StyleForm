@@ -100,7 +100,7 @@
 			this.wrapper.style.width = (this.element.clientWidth+50)+"px";
 			this.element.parentNode.insertBefore(this.wrapper, this.element);
 			this.wrapper.insertBefore(this.element, this.wrapper.children[0]);
-			this.wrapper.style.height = this.optionsWrapper.children[this.current].clientHeight + "px";
+			this.wrapper.style.height = this.selectedWrapper.clientHeight + "px";
 	    }
 
 	    open() {
@@ -177,7 +177,7 @@
 					}
 				}
 			});
-    	}
+		}
 
 		watch() {
 		    	if ( "MutationObserver" in window && !this.watching ) {
@@ -205,9 +205,6 @@
 			}
 
 			return this;
-    	}
+		}
 	}
 }));
-
-
-new StyleForm();
