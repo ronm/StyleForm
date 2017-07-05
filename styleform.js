@@ -18,11 +18,11 @@
 		selector = 'select,input[type="checkbox"],input[type="radio"]',
 		selectInner = '<div class="selected"></div><div class="options-wrapper"></div>',
 		selectTemplate = document.createElement('div'),
-		frag = document.createDocumentFragment();
+		template = document.createDocumentFragment();
 
 	selectTemplate.innerHTML = selectInner;
 	selectTemplate.className = "select-wrapper";
-	frag.appendChild(selectTemplate);
+	template.appendChild(selectTemplate);
 
 	/* FORM: SELECTS */
 	class StyleSelect {
@@ -30,6 +30,7 @@
 	    constructor(element = null) {		    
 	    	this.element = element;
 	    	this.options = [].slice.apply(element.children);
+	    		let frag = template.cloneNode(true);
 			this.wrapper = frag.querySelector(".select-wrapper");
 			this.optionsWrapper = frag.querySelector(".options-wrapper");
 			this.selectedWrapper = frag.querySelector(".selected");
@@ -45,7 +46,7 @@
 			});
 		
 			this.element.addEventListener("input", () => this.set( this.element.selectedIndex ));
-	      
+	    	      
 			this.wrapper.addEventListener("keydown", event => {
 				let key = event.which;
 				if ( key === keyMap.UP || key === keyMap.DOWN || key === keyMap.ENTER ) {
