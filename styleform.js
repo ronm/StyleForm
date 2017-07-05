@@ -16,8 +16,13 @@
 	
 	let keyMap = { UP: 38, DOWN: 40, ENTER: 13 },
 		selector = 'select,input[type="checkbox"],input[type="radio"]',
-		selectTemplate = '<div class="select-wrapper"><div class="selected"></div><div class="options-wrapper"></div></div>',
-		frag = document.createRange().createContextualFragment(selectTemplate);
+		selectInner = '<div class="selected"></div><div class="options-wrapper"></div>',
+		selectTemplate = document.createElement('div'),
+		frag = document.createDocumentFragment();
+
+	selectTemplate.innerHTML = selectInner;
+	selectTemplate.className = "select-wrapper";
+	frag.appendChild(selectTemplate);
 
 	/* FORM: SELECTS */
 	class StyleSelect {
@@ -35,9 +40,11 @@
 			if ('ontouchstart' in window) { this.wrapper.classList.add("touch"); }
 
 			this.element.addEventListener("change", () => {
-				this.optionsWrapper.querySelector(".active ").classList.remove("active");
+				this.optionsWrapper.querySelector(".active").classList.remove("active");
 				this.optionsWrapper.children[this.element.selectedIndex].classList.add("active");
 			});
+		
+			this.element.addEventListener("input", () => this.set( this.element.selectedIndex ));
 	      
 			this.wrapper.addEventListener("keydown", event => {
 				let key = event.which;
